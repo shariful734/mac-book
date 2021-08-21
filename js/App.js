@@ -1,62 +1,115 @@
 
-// memory buttons part
+// memory cost buttons part
 
-// memory button 1
+const MemoryCostDetail = document.getElementById('memory-cost');
+
+// memory cost button 1
 
 document.getElementById('memory-btn1').addEventListener('click', function () {
 
-    const firstMemoryCostDetail = document.getElementById('memory-cost');
+    const firstMemoryCostText = MemoryCostDetail.innerText;
 
-    const firstMemoryCostText = firstMemoryCostDetail.innerText;
+    MemoryCostDetail.innerText = 0;
 
-    firstMemoryCostDetail.innerText = 0;
-
+    updateTotal()
 
 })
 
-// memory button 2
+// memory cost button 2
 
 document.getElementById('memory-btn2').addEventListener('click', function () {
 
-    const secondMemoryCostDetail = document.getElementById('memory-cost');
+    const firstMemoryCostText = MemoryCostDetail.innerText;
 
-    const secondMemoryCostText = secondMemoryCostDetail.innerText;
+    MemoryCostDetail.innerText = 180;
 
-    secondMemoryCostDetail.innerText = 180;
+    updateTotal()
 
 })
 
-// storage buttons part
+// storage cost buttons part
 
-// storage button 1
+const StorageCostDetail = document.getElementById('storage-cost');
+
+// storage cost button 1
 
 document.getElementById('storage-btn1').addEventListener('click', function () {
 
-    const firstStorageCostDetail = document.getElementById('storage-cost');
+    const StorageCostText = StorageCostDetail.innerText;
 
-    const firstStorageCostText = firstStorageCostDetail.innerText;
+    StorageCostDetail.innerText = 0;
 
-    firstStorageCostDetail.innerText = 0;
+    updateTotal()
+
 })
 
-// storage button 2
+// storage cost button 2
 
 document.getElementById('storage-btn2').addEventListener('click', function () {
 
-    const secondStorageCostDetail = document.getElementById('storage-cost');
+    const StorageCostText = StorageCostDetail.innerText;
 
-    const secondStorageCostText = secondStorageCostDetail.innerText;
+    StorageCostDetail.innerText = 100;
 
-    secondStorageCostDetail.innerText = 100;
+    updateTotal()
 })
 
-// storage button 3
+// storage cost button 3
 
 document.getElementById('storage-btn3').addEventListener('click', function () {
 
-    const thirdStorageCostDetail = document.getElementById('storage-cost');
+    const StorageCostText = StorageCostDetail.innerText;
 
-    const thirdStorageCostText = thirdStorageCostDetail.innerText;
+    StorageCostDetail.innerText = 180;
 
-    thirdStorageCostDetail.innerText = 180;
+    updateTotal()
 })
+
+// delivery cost section
+
+const DelivryCostDetail = document.getElementById('delivery-cost');
+
+// delivery cost button 1
+
+document.getElementById('delivery-btn1').addEventListener('click', function () {
+
+    const DelivryCostText = DelivryCostDetail.innerText;
+
+    DelivryCostDetail.innerText = 0;
+
+    updateTotal()
+})
+
+// delivery cost button 2
+
+document.getElementById('delivery-btn2').addEventListener('click', function () {
+
+    const DelivryCostText = DelivryCostDetail.innerText;
+
+    DelivryCostDetail.innerText = 20;
+
+    updateTotal()
+})
+
+// update total part 
+
+const totalCostDetail = document.getElementById('total-price');
+
+const totalCostDetailText = totalCostDetail.innerText;
+
+const bestPrice = 1299;
+
+function updateTotal() {
+
+    const memoryCost = parseFloat(MemoryCostDetail.innerText);
+
+    const storageCost = parseFloat(StorageCostDetail.innerText);
+
+    const delivryCost = parseFloat(DelivryCostDetail.innerText);
+
+    const totalCost = memoryCost + storageCost + delivryCost + bestPrice;
+
+    totalCostDetail.innerText = totalCost;
+
+
+}

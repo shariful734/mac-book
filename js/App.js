@@ -111,5 +111,20 @@ function updateTotal() {
 
     totalCostDetail.innerText = totalCost;
 
+    return totalCost;
 
 }
+
+// bottom total and discount part 
+
+const bottomTotalCost = document.getElementById('bottom-total');
+
+const bottomTotalText = bottomTotalCost.innerText;
+
+
+
+
+
+
+
+
